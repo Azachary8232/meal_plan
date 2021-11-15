@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.container{
+    margin: auto;
+    width: 75%;
+}
+.lego{
+    border: 1px solid black;
+}
+.marginAuto{
+    margin: auto;
+}
+.marginTop{
+    margin-top: 25px;
+}
+.flex{
+display: flex;
+}
+.flex1{
+    flex: 1;
+}
+.flex2{
+    flex: 2;
+}
+.flex3{
+    flex: 3;
+}
+.flex4{
+    flex: 4;
+}
+.flex5{
+    flex: 5;
+}
+.flex{
+    flex: 6;
+}
+.flex-end{
+    justify-content: end;
+}
+.spaceAround{
+    justify-content: space-around;
+}
+.spaceBetween{
+    justify-content: space-between;
+}
+.spaceEvenly{
+    justify-content: space-evenly;
+}
+.textAlign{
+    text-align: center;
+}
+.block{
+    display: block;
+}
+.inline{
+    display: inline;
+}
+.inlineBlock{
+    display: inline-block;
+}
+.btn2{
+    box-shadow: 2px 3px black;
+}
