@@ -65,3 +65,39 @@ display: flex;
 .btn2{
     box-shadow: 2px 3px black;
 }
+
+
+.groceryBox{
+    margin-right: 50px;
+}
+.groceryList{
+    height: 600px;
+    margin-top: 10px;
+    border: 3px solid black;
+    overflow-y: auto;
+}
+.input1{
+    border: none;
+    width: 75%;
+}
+.anchor1{
+    margin: 0px 10px 0px 50px;
+}
+.anchor2{
+    margin: 0px 0px 0px 75px;
+}
+
+
+.mealBox{
+    margin-left: 50px;
+}
+.mealPlan{
+    height: 600px;
+    margin-top: 10px;
+    border: 3px solid black;
+    overflow-y: auto;
+}
+.days{
+    margin-left: 100px;
+}
+
