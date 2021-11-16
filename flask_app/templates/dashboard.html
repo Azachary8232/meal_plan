@@ -10,28 +10,30 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
 </head>
-
 <body>
     <div class="container">
-        <div class="flex lego navBar1 my-2">
+        <div class="flex my-1 spaceBetween px-3">
             <!-- NavBar -->
             <div>
-                <h1>My Meals</h1>
+                <h4 class="inlineBlock">MY Meals</h4>
+            </div>
+            <div>
+                <a href="/logout">Logout</a>
             </div>
         </div>
         <div class="flex my-5">
             <!-- Body -->
-            <div class="flex4 groceryBox">
+            <div class="flex1 groceryBox">
                 <!-- Left Column -->
                 <div class="textAlign">
-                    <h1>Current Grocery List</h1>
+                    <h3>Current Grocery List</h3>
                 </div>
                 <div class="groceryList p-3">
                     <div>
-                        <h3>QTY.</h3>
+                        <h5>QTY.</h5>
                     </div>
                     <div>
-                        <h2 class="mx-5 my-2">Costco</h2>
+                        <h5 class="mx-5 my-2">Costco</h5>
                         <form action="" method="post">
                             {% for r in range(10) %}
                             <div class="inlineBlock">
@@ -47,7 +49,7 @@
                                     <option value="">9</option>
                                     <option value="">10</option>
                                 </select>
-                                <input type="text" name="" id="" placeholder="Canadian Green Beans Black Style"
+                                <input type="text" name="" id="" placeholder="Canadian Green Beans"
                                     class="input1">
                             </div>
                             <div class="inlineBlock">
@@ -76,7 +78,7 @@
                         </form>
                     </div>
                     <div>
-                        <h2 class="mx-5 my-2">WinCo</h2>
+                        <h5 class="mx-5 my-2">WinCo</h5>
                         <form action="" method="post">
                             {% for r in range(10) %}
                             <div class="inlineBlock">
@@ -126,13 +128,13 @@
                     <a href="">Print</a>
                 </div>
             </div>
-            <div class="flex5 mealBox">
+            <div class="flex1 mealBox">
                 <!-- Right Column -->
                 <div class="textAlign">
-                    <h1>Meal Plan</h1>
+                    <h3>Meal Plan</h3>
                 </div>
                 <div class="mealPlan p-3">
-                    <a href="">Add Meal</a>
+                    <a href="/meals">Add Meal</a>
                     <div>
                         {% for day in range(7) %}
                         <h4>Day {{ day + 1 }}:</h4>

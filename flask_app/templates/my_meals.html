@@ -10,10 +10,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="flex lego navBar1 my-2">
+        <div class="flex my-1 spaceBetween px-3">
             <!-- NavBar -->
             <div>
-                <h1>Dashboard</h1>
+                <a href="/add_meal">Add A New Meal</a>
+            </div>
+            <div>
+                <a href="/dashboard" class="mx-2">Dashboard</a>
+                <a href="/logout">Logout</a>
             </div>
         </div>
         <div class="textAlign">
@@ -35,7 +39,7 @@
                     <div class="flex1">
                         <a href="">List</a>
                         <a href="" class="anchor3">Meal</a>
-                        <a href="">Edit</a>
+                        <a href="/edit_meal">Edit</a>
                     </div>
                 </div>
                 {% endfor %}

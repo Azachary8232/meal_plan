@@ -77,7 +77,7 @@ display: flex;
 
 
 .groceryBox{
-    margin-right: 50px;
+    margin-right: 25px;
 }
 .groceryList{
     height: 600px;
@@ -90,7 +90,7 @@ display: flex;
     width: 75%;
 }
 .anchor1{
-    margin: 0px 10px 0px 50px;
+    margin: 0px 10px 0px 10px;
 }
 .anchor2{
     margin: 0px 0px 0px 75px;
@@ -98,7 +98,7 @@ display: flex;
 
 
 .mealBox{
-    margin-left: 50px;
+    margin-left: 25px;
 }
 .mealPlan{
     height: 600px;
