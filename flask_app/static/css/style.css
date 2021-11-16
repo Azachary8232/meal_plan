@@ -11,6 +11,12 @@
 .lego{
     border: 1px solid black;
 }
+.boxContainer{
+    border: 3px solid black;
+}
+.borderBottom{
+    border-bottom: 3px solid black;
+}
 .marginAuto{
     margin: auto;
 }
@@ -65,6 +71,9 @@ display: flex;
 .btn2{
     box-shadow: 2px 3px black;
 }
+.scroll{
+    overflow-y: auto;
+}
 
 
 .groceryBox{
@@ -100,4 +109,21 @@ display: flex;
 .days{
     margin-left: 100px;
 }
+
+.anchor3{
+    margin: 0px 15px;
+}
+.meal1{
+    height: 135px;
+}
+.meal2{
+    height: 260px;
+}
+.mealTime{
+    position: absolute;
+}
+.meal4{
+    margin-left: 100px;
+}
+
 

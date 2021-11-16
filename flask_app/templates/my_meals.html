@@ -9,7 +9,79 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
 </head>
 <body>
-
+    <div class="container">
+        <div class="flex lego navBar1 my-2">
+            <!-- NavBar -->
+            <div>
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+        <div class="textAlign">
+            <h1>My Meals</h1>
+        </div>
+        <div class="boxContainer p-3">
+            <div class="borderBottom scroll meal1">
+                <div>
+                    <h3 class="mealTime">Breakfast:</h3>
+                </div>
+                {% for meal in range(5) %}
+                <div class="flex px-5">
+                    <div class="flex2 meal4">
+                        <h5>Pancakes</h5>
+                    </div>
+                    <div class="flex1 mx-5">
+                        <h5>< 30minutes</h5>
+                    </div>
+                    <div class="flex1">
+                        <a href="">List</a>
+                        <a href="" class="anchor3">Meal</a>
+                        <a href="">Edit</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="borderBottom scroll meal1 my-3">
+                <div>
+                    <h3 class="mealTime">Lunch:</h3>
+                </div>
+                {% for meal in range(5) %}
+                <div class="flex px-5">
+                    <div class="flex2 meal4">
+                        <h5>Grilled Cheese Sandwiches</h5>
+                    </div>
+                    <div class="flex1 mx-5">
+                        <h5>15 Minutes</h5>
+                    </div>
+                    <div class="flex1">
+                        <a href="">List</a>
+                        <a href="" class="anchor3">Meal</a>
+                        <a href="">Edit</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="borderBottom scroll meal2 my-3">
+                <div>
+                    <h3 class="mealTime">Dinner:</h3>
+                </div>
+                {% for meal in range(10) %}
+                <div class="flex px-5">
+                    <div class="flex2 meal4">
+                        <h5>Top Sirloin</h5>
+                    </div>
+                    <div class="flex1 mx-5">
+                        <h5>3 Hours</h5>
+                    </div>
+                    <div class="flex1">
+                        <a href="">List</a>
+                        <a href="" class="anchor3">Meal</a>
+                        <a href="">Edit</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 
 
