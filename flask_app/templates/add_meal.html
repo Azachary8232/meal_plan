@@ -10,13 +10,67 @@
 </head>
 <body>
     <div class="container">
-        <div class="flex lego navBar1 my-2">
+        <div class="flex my-1 spaceBetween px-3">
             <!-- NavBar -->
             <div>
-                <h1>My Meals</h1>
+                <img src="" alt="Arrow">
+                <h4 class="inlineBlock">Back to MY Meals</h4>
+            </div>
+            <div>
+                <a href="/dashboard" class="mx-2">Dashboard</a>
+                <a href="/logout">Logout</a>
             </div>
         </div>
-
+        <div class="textAlign">
+            <h3>Add Meal</h3>
+        </div>
+        <div class="flex my-3">
+            <div class="flex1 groceryBox">
+                <!-- Left Column -->
+                <div>
+                    <h1 class="inlineBlock">1.</h1>
+                    <select name="" id="" class="mx-5">
+                        <option value="">Breakfast</option>
+                        <option value="">Lunch</option>
+                        <option value="">Dinner</option>
+                    </select>
+                </div>
+                <div class="ingredientBox p-3">
+                    <h1>3.</h1>
+                    <div>
+                        <label for="">Add</label>
+                        <input type="text" placeholder="Ingredient" >
+                        <select name="" id="">
+                            <option value="">CostoCo</option>
+                            <option value="">WinCo</option>
+                            <option value="">+ Add Store</option>
+                        </select>
+                    </div>
+                    <div class="my-2 scroll">
+                        <h6>-Some sort of Black Beans</h6>
+                        <h6>-Orange peel of the Sunrise</h6>
+                        <h6>-Peanut Butter with sauce</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="flex1 mealBox">
+                <!-- Right Column -->
+                <div>
+                    <h1 class="inlineBlock">2.</h1>
+                    <label for="" class="mealName">Meal Name:</label>
+                    <input type="text" placeholder="Add Meal Name Here">
+                </div>
+                <div class="directionBox p-3">
+                    <div class=" boxContainer p-2">
+                        <h3>Directions:</h3>
+                        <textarea name="" id="" cols="40" rows="10"></textarea>
+                    </div>
+                    <div class="my-2 textAlign">
+                        <input type="text" placeholder="Est. Prep Time:">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
