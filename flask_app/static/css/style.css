@@ -56,6 +56,7 @@ display: flex;
 .spaceEvenly{
     justify-content: space-evenly;
 }
+
 .textAlign{
     text-align: center;
 }

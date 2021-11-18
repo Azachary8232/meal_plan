@@ -21,20 +21,12 @@
                 <a href="/logout">Logout</a>
             </div>
         </div>
-        <div class="textAlign">
-            <h3>Add Meal</h3>
+        <div class="textAlign mt-5">
+            <h1>{{meal.name}}</h1>
         </div>
         <div class="flex my-3">
             <div class="flex1 groceryBox">
                 <!-- Left Column -->
-                <div>
-                    <h1 class="inlineBlock">1.</h1>
-                    <select name="" id="" class="mx-5">
-                        <option value="">Breakfast</option>
-                        <option value="">Lunch</option>
-                        <option value="">Dinner</option>
-                    </select>
-                </div>
                 <div class="ingredientBox p-3">
                     <h1>3.</h1>
                     <div>
@@ -55,24 +47,23 @@
             </div>
             <div class="flex1 mealBox">
                 <!-- Right Column -->
-                <div>
-                    <h1 class="inlineBlock">2.</h1>
-                    <label for="" class="mealName">Meal Name:</label>
-                    <input type="text" placeholder="Add Meal Name Here">
-                </div>
                 <div class="directionBox p-3">
                     <div class=" boxContainer p-2">
                         <h3>Directions:</h3>
-                        <textarea name="" id="" cols="40" rows="10"></textarea>
-                    </div>
-                    <div class="my-2 textAlign">
-                        <input type="text" placeholder="Est. Prep Time:">
-                    </div>
+                        <form action="/directions_update/{{meal.id}}" method="post">
+                            <textarea name="directions" id="" cols="40" rows="10">{{meal.directions}}</textarea>
+                        </div>
+                        <div class="flex spaceAround mt-3">
+                            <div>
+                                <input type="text" placeholder="Est. Prep Time:" value="{{meal.prep_time}}" name="prep_time">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn2 btn-primary">Update</button>
+                            </div>
+                        </div>
+                        </form>
                 </div>
             </div>
-        </div>
-        <div class="textAlign">
-            <button type="submit" class="btn btn2 btn-primary">Add</button>
         </div>
     </div>
 

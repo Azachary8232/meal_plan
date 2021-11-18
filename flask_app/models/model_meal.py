@@ -13,6 +13,7 @@ class Meal:
         self.name = data['name']
         self.directions = data['directions']
         self.meal_time = data['meal_time']
+        self.prep_time = data['prep_time']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
@@ -37,13 +38,23 @@ class Meal:
 
             # ***Retreive***
 
+    @classmethod
+    def get_meal_by_id(cls,data):
+        query = "SELECT * FROM meals WHERE id = %(id)s;"
+        meal = connectToMySQL(model_db).query_db(query,data)
+        print(meal)
+        return cls(meal[0])
 
 
 
 
     # ***Update***
 
-
+    @classmethod
+    def update_directions(cls, data):
+        query = 'UPDATE meals SET directions = %(directions)s, prep_time = %(prep_time)s WHERE id = %(id)s';
+        connectToMySQL(model_db).query_db(query, data)
+        return print("Update Successful")
 
 
 

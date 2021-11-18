@@ -5,7 +5,7 @@ from flask_app.models import model_user, model_meal
 
 
 
-
+#  Route to USERS MEALS
 @app.route('/meals')
 def meals():
     if 'user_id' not in session:
@@ -33,9 +33,27 @@ def creat_meal():
         'meal_time' : request.form['meal_time'],
         'user_id' : session['user_id']
     }
-    model_meal.Meal.create_meal(data)
-    return redirect('/add_meal')
+    meal_id = model_meal.Meal.create_meal(data)
+    return redirect(f'/add_meal/{meal_id}')
 
-@app.route('/add_meal')
-def add():
-    return render_template('add_meal.html')
+#   Route to ADD INGREDIENTS and DIRECTIONS to USER MEAL
+@app.route('/add_meal/<int:id>')
+def add(id):
+    if 'user_id' not in session:
+        return redirect('/login')
+
+    meal_id = {'id' : id}
+    meal = model_meal.Meal.get_meal_by_id(meal_id)
+    return render_template('add_meal.html', meal = meal)
+
+#  from DIRECTIONS FORM to UPDATE MEAL
+@app.route('/directions_update/<int:id>', methods = ['POST'])
+def directions_update(id):
+    data = { 
+        'id' : id,
+        'directions' : request.form['directions'],
+        'prep_time' : request.form['prep_time']
+        }
+
+    model_meal.Meal.update_directions(data)
+    return redirect(f'/add_meal/{id}')
