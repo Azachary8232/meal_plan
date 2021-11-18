@@ -60,8 +60,8 @@ class User:
     @classmethod
     def create_user(cls,data):
         query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
-        return connectToMySQL(model_db).query_db(query, data)
-
+        user_id =  connectToMySQL(model_db).query_db(query, data)
+        return user_id
 
 
 
