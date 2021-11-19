@@ -51,9 +51,16 @@
                         </form>
                     </div>
                     <div class="my-2 scroll">
-                        <h6>-Some sort of Black Beans</h6>
-                        <h6>-Orange peel of the Sunrise</h6>
-                        <h6>-Peanut Butter with sauce</h6>
+                        <table>
+                            <tbody>
+                                {% for ingredient in ingredients.ingredients %}
+                                <tr class="flex spaceBetween">
+                                    <td class="mx-5">{{ingredient.name}}</td>
+                                    <td class="mx-5"><a href="">Delete</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

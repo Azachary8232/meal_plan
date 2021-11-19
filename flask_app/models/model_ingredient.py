@@ -12,7 +12,7 @@ class Ingredient:
         self.name = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.store_id = data['user_id']
+        self.store_id = data['store_id']
 
     @staticmethod
     def validate_new_ingredient(data):

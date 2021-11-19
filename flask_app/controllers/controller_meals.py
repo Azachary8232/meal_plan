@@ -1,7 +1,7 @@
 
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
-from flask_app.models import model_user, model_meal, model_store, model_ingredient
+from flask_app.models import model_user, model_meal, model_store, model_ingredient, model_many
 
 
 
@@ -37,17 +37,18 @@ def creat_meal():
     return redirect(f'/add_meal/{meal_id}')
 
 #   Route to ADD INGREDIENTS and DIRECTIONS to USER MEAL
-@app.route('/add_meal/<int:meal_id>')
-def add(meal_id):
+@app.route('/add_meal/<int:id>')
+def add(id):
     if 'user_id' not in session:
         return redirect('/login')
-
+#       Adding store to dropdown
     user_id = { 'id' : session['user_id']}
     stores = model_store.Store.get_store_by_user_id(user_id)
 
-    meal_id = {'id' : meal_id}
-    meal = model_meal.Meal.get_meal_by_id(meal_id)
-    return render_template('add_meal.html', meal = meal, stores = stores)
+    id = {'id' : id}
+    ingredients = model_meal.Meal.get_ingredients_by_meal_id(id)
+    meal = model_meal.Meal.get_meal_by_id(id)
+    return render_template('add_meal.html', meal = meal, stores = stores, ingredients = ingredients)
 
 #  from DIRECTIONS FORM to UPDATE MEAL
 @app.route('/directions_update/<int:id>', methods = ['POST'])

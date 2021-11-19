@@ -3,6 +3,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app
 from flask import flash 
+from flask_app.models import model_ingredient
 
 model_db = "meals"
 
@@ -44,6 +45,22 @@ class Meal:
         meal = connectToMySQL(model_db).query_db(query,data)
         return cls(meal[0])
 
+    @classmethod
+    def get_ingredients_by_meal_id(cls,data):
+        query = "SELECT * FROM meals JOIN meals_ingredients ON meals.id = meals_ingredients.meal_id JOIN ingredients ON meals_ingredients.ingredient_id = ingredients.id WHERE meals.id = %(id)s;"
+        results = connectToMySQL(model_db).query_db(query,data)
+        meal = cls(results[0])
+        meal.ingredients = []
+        for row in results:
+            ingredient_data = {
+                'id' : row['ingredients.id'],
+                'name' : row['ingredients.name'],
+                'created_at' : row['ingredients.created_at'],
+                'updated_at' : row['ingredients.updated_at'],
+                'store_id' : row['store_id']
+            }
+            meal.ingredients.append(model_ingredient.Ingredient(ingredient_data) )
+        return meal
 
 
 
