@@ -35,9 +35,10 @@
                         <label for="">Add</label>
                         <input type="text" placeholder="Ingredient" >
                         <select name="" id="">
-                            <option value="">CostoCo</option>
-                            <option value="">WinCo</option>
-                            <option value=""><span><a href="">+ Add Store</a></span></option>
+                            <option value=""></option>
+                            {% for store in stores %}
+                            <option value="">{{store.name}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="my-2 scroll">

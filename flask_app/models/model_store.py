@@ -39,6 +39,12 @@ class Store:
 
             # ***Retreive***
 
+    @classmethod
+    def get_store_by_user_id(cls,data):
+        query = "SELECT * FROM stores WHERE user_id = %(id)s;"
+        results = connectToMySQL(model_db).query_db(query,data)
+        print(results)
+        return results
 
 
 
