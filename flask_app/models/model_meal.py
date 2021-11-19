@@ -42,7 +42,6 @@ class Meal:
     def get_meal_by_id(cls,data):
         query = "SELECT * FROM meals WHERE id = %(id)s;"
         meal = connectToMySQL(model_db).query_db(query,data)
-        print(meal)
         return cls(meal[0])
 
 

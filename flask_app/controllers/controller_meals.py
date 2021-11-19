@@ -1,7 +1,7 @@
 
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
-from flask_app.models import model_user, model_meal, model_store
+from flask_app.models import model_user, model_meal, model_store, model_ingredient
 
 
 
@@ -61,12 +61,6 @@ def directions_update(id):
     model_meal.Meal.update_directions(data)
     return redirect(f'/add_meal/{id}')
 
-#   from INGREDIENTS FORM to ADD INGREDIENT 
-@app.route('/add_ingredient/<int:meal_id>', methods = ['POST'])
-def add_ingredient(meal_id):
-    
-
-    return redirect(f'/add_meal/{meal_id}')
 
 
 

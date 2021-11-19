@@ -32,13 +32,20 @@
                         <a href="/add_store" class="mx-5">Add Store</a>
                     </div>
                     <div>
-                        <form action="add_ingredient/{{meal.id}}" method="post">
+                        <form action="/add_ingredient/{{meal.id}}" method="post">
                             <button type="submit">+</button>
-                            <input type="text" placeholder="Ingredient" >
-                            <select name="" id="">
+                            <input type="text" placeholder="Ingredient" name="name" >
+                            {% with messages = get_flashed_messages(category_filter= 'new_ingredient_name') %}    
+                                {% if messages %}                           
+                                    {% for message in messages %}            
+                                        <p>{{message}}</p>                 
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            <select name="store_id" id="">
                                 <option value="">Select Store</option>
                                 {% for store in stores %}
-                                <option value="">{{store.name}}</option>
+                                <option value="{{store.id}}">{{store.name}}</option>
                                 {% endfor %}
                             </select>
                         </form>
