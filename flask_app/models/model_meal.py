@@ -86,6 +86,11 @@ class Meal:
         connectToMySQL(model_db).query_db(query, data)
         return print("Update Successful")
 
+    @classmethod
+    def update_meal(cls, data):
+        query = 'UPDATE meals SET directions = %(directions)s, prep_time = %(prep_time)s, meal_time = %(meal_time)s, name = %(name)s WHERE id = %(id)s';
+        connectToMySQL(model_db).query_db(query, data)
+        return print("Update Successful")
 
 
 

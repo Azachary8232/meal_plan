@@ -24,19 +24,43 @@
         <div class="textAlign">
             <h3>Edit Meal</h3>
         </div>
-        <div class="flex my-3">
-            <div class="flex1 groceryBox">
-                <!-- Left Column -->
+        <form action="/update_meal/{{meal.id}}" method="post">
+            <div class="flex spaceAround mt-3">
                 <div>
                     <h1 class="inlineBlock">1.</h1>
-                    <select name="" id="" class="mx-5">
-                        <option value="">Breakfast</option>
-                        <option value="">Lunch</option>
-                        <option value="">Dinner</option>
+                    <select name="meal_time" id="" class="mx-5">
+                        <option value="{{meal.meal_time}}">{{meal.meal_time}}</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
                     </select>
                 </div>
+                <div>
+                    <h1 class="inlineBlock">2.</h1>
+                    <label for="" class="mealName">Meal Name:</label>
+                    <input type="text" placeholder="Add Meal Name Here" value="{{meal.name}}" name="name">
+                </div>
+            </div>
+        <div class="flex">
+            <div class="flex1 groceryBox">
+                <div class="directionBox p-3">
+                <!-- Left Column -->
+                    <div class=" boxContainer p-2">
+                        <h3>Directions:</h3>
+                        <textarea name="directions" id="" cols="40" rows="10" class="p-2">{{meal.directions}}</textarea>
+                    </div>
+                    <div class="my-2 textAlign">
+                        <input type="text" placeholder="Est. Prep Time:" value="{{meal.prep_time}}" name="prep_time">
+                    </div>
+                </div>
+                <div class="textAlign my-3">
+                    <button type="submit" class="btn btn2 btn-primary">Update</button>
+                </div>
+            </div>
+        </form>
+            <div class="flex1 mealBox">
+                <!-- Right Column -->
                 <div class="ingredientBox p-3">
-                    <h1>3.</h1>
                     <div>
                         <label for="">Add</label>
                         <input type="text" placeholder="Ingredient" >
@@ -53,26 +77,6 @@
                     </div>
                 </div>
             </div>
-            <div class="flex1 mealBox">
-                <!-- Right Column -->
-                <div>
-                    <h1 class="inlineBlock">2.</h1>
-                    <label for="" class="mealName">Meal Name:</label>
-                    <input type="text" placeholder="Add Meal Name Here">
-                </div>
-                <div class="directionBox p-3">
-                    <div class=" boxContainer p-2">
-                        <h3>Directions:</h3>
-                        <textarea name="" id="" cols="40" rows="10"></textarea>
-                    </div>
-                    <div class="my-2 textAlign">
-                        <input type="text" placeholder="Est. Prep Time:">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="textAlign">
-            <button type="submit" class="btn btn2 btn-primary">Update</button>
         </div>
     </div>
 
