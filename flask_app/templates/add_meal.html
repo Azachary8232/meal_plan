@@ -27,15 +27,17 @@
         <div class="flex my-3">
             <div class="flex1 groceryBox">
                 <!-- Left Column -->
-                <div class="ingredientBox p-3">
-                    <h1>3.</h1>
+                <div class="ingredientBox px-2 pt-2">
+                    <div class="flex flex-end mx-4">
+                        <a href="/add_store" class="mx-5">Add Store</a>
+                    </div>
                     <div>
                         <label for="">Add</label>
                         <input type="text" placeholder="Ingredient" >
                         <select name="" id="">
                             <option value="">CostoCo</option>
                             <option value="">WinCo</option>
-                            <option value="">+ Add Store</option>
+                            <option value=""><span><a href="">+ Add Store</a></span></option>
                         </select>
                     </div>
                     <div class="my-2 scroll">
@@ -51,11 +53,11 @@
                     <div class=" boxContainer p-2">
                         <h3>Directions:</h3>
                         <form action="/directions_update/{{meal.id}}" method="post">
-                            <textarea name="directions" id="" cols="40" rows="10">{{meal.directions}}</textarea>
+                            <textarea class="p-2" name="directions" id="" cols="40" rows="10">{{meal.directions}}</textarea>
                         </div>
-                        <div class="flex spaceAround mt-3">
+                        <div class="flex spaceAround m-2">
                             <div>
-                                <input type="text" placeholder="Est. Prep Time:" value="{{meal.prep_time}}" name="prep_time">
+                                <input class="mt-2" type="text" placeholder="Est. Prep Time:" value="{{meal.prep_time}}" name="prep_time">
                             </div>
                             <div>
                                 <button type="submit" class="btn btn2 btn-primary">Update</button>

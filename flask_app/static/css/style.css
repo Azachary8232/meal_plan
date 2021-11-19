@@ -167,3 +167,12 @@ display: flex;
     text-align: center;
     margin-top: 50px;
 }
+
+/* Add Store Page */
+.storeBox{
+    border: 3px solid black;
+    margin-top: 100px;
+    width: 50%;
+    height: 300px;
+    padding: 25px
+}
