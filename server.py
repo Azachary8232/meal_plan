@@ -1,4 +1,4 @@
-from flask_app.controllers import controller_users, controller_meals, controller_stores 
+from flask_app.controllers import controller_users, controller_meals, controller_stores, controller_ingredients 
 from flask_app import app
 
 

@@ -32,14 +32,16 @@
                         <a href="/add_store" class="mx-5">Add Store</a>
                     </div>
                     <div>
-                        <label for="">Add</label>
-                        <input type="text" placeholder="Ingredient" >
-                        <select name="" id="">
-                            <option value=""></option>
-                            {% for store in stores %}
-                            <option value="">{{store.name}}</option>
-                            {% endfor %}
-                        </select>
+                        <form action="add_ingredient/{{meal.id}}" method="post">
+                            <button type="submit">+</button>
+                            <input type="text" placeholder="Ingredient" >
+                            <select name="" id="">
+                                <option value="">Select Store</option>
+                                {% for store in stores %}
+                                <option value="">{{store.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
                     </div>
                     <div class="my-2 scroll">
                         <h6>-Some sort of Black Beans</h6>
