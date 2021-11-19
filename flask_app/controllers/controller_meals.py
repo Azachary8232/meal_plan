@@ -13,8 +13,7 @@ def meals():
 
     id = { 'id' : session['user_id']}
     meals = model_meal.Meal.get_all_by_user(id)
-    print("!!!!")
-    print(meals)
+    
     return render_template('my_meals.html', meals = meals)
 
 #  Route to CREATE NEW MEAL
@@ -66,6 +65,13 @@ def directions_update(id):
     model_meal.Meal.update_directions(data)
     return redirect(f'/add_meal/{id}')
 
+
+
+#  Route to EDIT MEALS INFO
+@app.route('/edit_meal/<int:id>')
+def edit_meal(id):
+
+    return render_template('edit_meal.html')
 
 
 
