@@ -40,10 +40,24 @@ class Meal:
             # ***Retreive***
 
     @classmethod
+    def get_all_by_user(cls,data):
+        query = "SELECT * FROM meals WHERE user_id = %(id)s;"
+        meals = connectToMySQL(model_db).query_db(query,data)
+        return meals
+
+
+    @classmethod
     def get_meal_by_id(cls,data):
         query = "SELECT * FROM meals WHERE id = %(id)s;"
         meal = connectToMySQL(model_db).query_db(query,data)
         return cls(meal[0])
+
+    @classmethod
+    def get_meal_by_user_id(cls,data):
+        query = "SELECT * FROM meals WHERE id = %(id)s;"
+        results = connectToMySQL(model_db).query_db(query)
+        return results
+
 
     @classmethod
     def get_ingredients_by_meal_id(cls,data):

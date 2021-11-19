@@ -68,20 +68,22 @@
                 <div>
                     <h3 class="mealTime">Dinner:</h3>
                 </div>
-                {% for meal in range(10) %}
-                <div class="flex px-5">
-                    <div class="flex2 meal4">
-                        <h5>Top Sirloin</h5>
+                {% for meal in meals %}
+                    {% if meal.meal_time == 'dinner' %}
+                    <div class="flex px-5">
+                        <div class="flex2 meal4">
+                            <h5>{{meal.name}}</h5>
+                        </div>
+                        <div class="flex1 mx-5">
+                            <h5>{{meal.prep_time}}</h5>
+                        </div>
+                        <div class="flex1">
+                            <a href="">List</a>
+                            <a href="" class="anchor3">Meal</a>
+                            <a href="">Edit</a>
+                        </div>
                     </div>
-                    <div class="flex1 mx-5">
-                        <h5>3 Hours</h5>
-                    </div>
-                    <div class="flex1">
-                        <a href="">List</a>
-                        <a href="" class="anchor3">Meal</a>
-                        <a href="">Edit</a>
-                    </div>
-                </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

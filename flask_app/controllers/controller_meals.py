@@ -11,7 +11,11 @@ def meals():
     if 'user_id' not in session:
         return redirect('/login')
 
-    return render_template('my_meals.html')
+    id = { 'id' : session['user_id']}
+    meals = model_meal.Meal.get_all_by_user(id)
+    print("!!!!")
+    print(meals)
+    return render_template('my_meals.html', meals = meals)
 
 #  Route to CREATE NEW MEAL
 @app.route('/new_meal')
