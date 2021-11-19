@@ -61,7 +61,7 @@ class Meal:
 
     @classmethod
     def get_ingredients_by_meal_id(cls,data):
-        query = "SELECT * FROM meals JOIN meals_ingredients ON meals.id = meals_ingredients.meal_id JOIN ingredients ON meals_ingredients.ingredient_id = ingredients.id WHERE meals.id = %(id)s;"
+        query = "SELECT * FROM meals LEFT JOIN meals_ingredients ON meals.id = meals_ingredients.meal_id LEFT JOIN ingredients ON meals_ingredients.ingredient_id = ingredients.id WHERE meals.id = %(id)s;"
         results = connectToMySQL(model_db).query_db(query,data)
         meal = cls(results[0])
         meal.ingredients = []

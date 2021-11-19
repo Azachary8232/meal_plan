@@ -74,8 +74,13 @@ def edit_meal(id):
         return redirect('/login')
 
     data = { 'id' : id }
+    ingredients = model_meal.Meal.get_ingredients_by_meal_id(data)
     meal = model_meal.Meal.get_meal_by_id(data)
-    return render_template('edit_meal.html', meal = meal)
+
+    user_id = { 'id' : session['user_id'] }
+    stores = model_store.Store.get_store_by_user_id(user_id)
+
+    return render_template('edit_meal.html', meal = meal, ingredients = ingredients, stores = stores)
 
 #  Route from FORM to UPDATE MEAL INFO 
 @app.route('/update_meal/<int:id>', methods = ['POST'])
@@ -89,6 +94,7 @@ def update_meal(id):
         'id' : id,
     }
     model_meal.Meal.update_meal(data)
+
     return redirect(f'/edit_meal/{id}')
 
 
