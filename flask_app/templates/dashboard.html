@@ -125,8 +125,7 @@
                 </div>
                 <div class="flex spaceAround my-3">
                     <a href="">Add Store</a>
-                    <a href="">Print</a>
-                </div>
+                    <input type="button" value="Print this page" onClick="window.print()">                </div>
             </div>
             <div class="flex1 mealBox">
                 <!-- Right Column -->
@@ -139,7 +138,8 @@
                         {% for day in range(7) %}
                         <h4>Day {{ day + 1 }}:</h4>
                         <div class="days">
-                            <h6>Breakfast-</h6>
+                            <h6 class="inlineBlock">Breakfast-</h6>
+                            <input type="text" placeholder="Enter Meal Here">
                             <h6>Lunch-</h6>
                             <h6>Dinner- <a href="">Beef Stew</a></h6>
                         </div>

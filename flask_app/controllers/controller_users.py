@@ -71,7 +71,10 @@ def register():
 def dashboard():
     if 'user_id' not in session:
         return redirect('/login')
-
+    
+    # data = { 'id' : session['user_id']}
+    # lists = model_user.User.get_items_by_meal_id(data)
+    # print(lists)
     return render_template("dashboard.html")
 
 

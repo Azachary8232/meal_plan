@@ -3,6 +3,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app
 from flask import flash 
+from flask_app.models import model_ingredient
 import re
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app) 
@@ -74,6 +75,28 @@ class User:
         if len(result) < 1:
             return False
         return cls(result[0])
+
+    @classmethod
+    def get_items_by_meal_id(cls,data):
+        query = "SELECT * FROM users LEFT JOIN grocery_list ON users.id = grocery_list.user_id LEFT JOIN ingredients ON grocery_list.ingredient_id = ingredients.id WHERE users.id = 1;"
+        results = connectToMySQL(model_db).query_db(query,data)
+        print("!!!!")
+        user = cls(results[0])
+        print(user)
+        user.ingredient = []
+        print(user.ingredient)
+        for row in results:
+            ingredient_data = {
+                'id' : row['ingredients.id'],
+                'name' : row['ingredients.name'],
+                'created_at' : row['ingredients.created_at'],
+                'updated_at' : row['ingredients.updated_at'],
+                'store_id' : row['store_id']
+            }
+            user.ingredient.append(model_ingredient.Ingredient(ingredient_data) )
+        return user
+
+
 
 
 
